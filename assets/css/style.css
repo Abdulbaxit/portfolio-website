@@ -173,12 +173,6 @@ article {
   padding: 15px;
   box-shadow: var(--shadow-1);
   z-index: 1;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  /* Hardware Acceleration for smooth scrolling */
-  will-change: transform, backdrop-filter;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
 }
 
 .separator {
