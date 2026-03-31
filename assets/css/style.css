@@ -175,6 +175,10 @@ article {
   z-index: 1;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  /* Hardware Acceleration for smooth scrolling */
+  will-change: transform, backdrop-filter;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
 }
 
 .separator {
@@ -473,6 +477,11 @@ main {
   width: 100%;
   background: hsla(240, 1%, 17%, 0.75);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* Hardware Acceleration for smooth scrolling */
+  will-change: transform, backdrop-filter;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
   box-shadow: var(--shadow-2);
