@@ -1959,3 +1959,47 @@ textarea.form-input::-webkit-resizer { display: none; }
   margin-top: 15px;
   font-weight: 500;
 }
+
+/* Tech Stack Grid */
+.tech-stack-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 25px;
+  background: var(--bg-gradient-jet);
+  border-radius: 16px;
+  box-shadow: var(--shadow-2);
+  border: 1px solid var(--jet);
+}
+
+.tech-stack-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--border-gradient-onyx);
+  border-radius: 8px;
+  border: 1px solid var(--jet);
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: 500;
+  transition: var(--transition-1);
+  box-shadow: var(--shadow-1);
+}
+
+.tech-stack-item:hover {
+  color: var(--orange-yellow-crayola);
+  transform: translateY(-2px);
+  border-color: var(--orange-yellow-crayola);
+}
+
+.tech-stack-item ion-icon {
+  color: var(--orange-yellow-crayola);
+  font-size: 20px;
+}
+
+.download-cv-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
+  filter: brightness(1.1);
+}
