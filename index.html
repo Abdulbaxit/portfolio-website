@@ -164,7 +164,7 @@
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
+            <button class="navbar-link" data-nav-link>Projects</button>
           </li>
 
 
@@ -217,8 +217,7 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg
-                " alt="design icon" width="40">
+                <ion-icon name="code-slash-outline" style="font-size: 40px; color: var(--orange-yellow-crayola);"></ion-icon>
               </div>
 
               <div class="service-content-box">
@@ -234,7 +233,7 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+                <ion-icon name="hardware-chip-outline" style="font-size: 40px; color: var(--orange-yellow-crayola);"></ion-icon>
               </div>
 
               <div class="service-content-box">
@@ -250,7 +249,7 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+                <ion-icon name="git-network-outline" style="font-size: 40px; color: var(--orange-yellow-crayola);"></ion-icon>
               </div>
 
               <div class="service-content-box">
@@ -266,7 +265,7 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
+                <ion-icon name="server-outline" style="font-size: 40px; color: var(--orange-yellow-crayola);"></ion-icon>
               </div>
 
               <div class="service-content-box">
@@ -295,41 +294,35 @@
           <ul class="project-list" style="margin-bottom: 30px;">
 
             <li class="project-item active">
-              <a href="https://happyfish.voltade.com" target="_blank" rel="noopener noreferrer">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-7.png" alt="Happy Fish" loading="lazy">
-                </figure>
-                <h3 class="project-title">Happy Fish (Digital Brain)</h3>
-                <p class="project-category">Web</p>
+              <a href="https://happyfish.voltade.com" target="_blank" rel="noopener noreferrer" class="project-card-no-img">
+                <div class="project-icon-box">
+                  <ion-icon name="globe-outline"></ion-icon>
+                </div>
+                <h3 class="project-title">Happy Fish</h3>
+                <p class="project-category">Live Web Application</p>
+                <div class="project-link-text">View Live ↗</div>
               </a>
             </li>
 
             <li class="project-item active">
-              <a href="https://overmugged.voltade.com" target="_blank" rel="noopener noreferrer">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-8.jpg" alt="Overmugged" loading="lazy">
-                </figure>
-                <h3 class="project-title">Overmugged Portal (Digital Brain)</h3>
-                <p class="project-category">Web</p>
+              <a href="https://overmugged.voltade.com" target="_blank" rel="noopener noreferrer" class="project-card-no-img">
+                <div class="project-icon-box">
+                  <ion-icon name="laptop-outline"></ion-icon>
+                </div>
+                <h3 class="project-title">Overmugged Portal</h3>
+                <p class="project-category">Client Dashboard</p>
+                <div class="project-link-text">View Live ↗</div>
               </a>
             </li>
 
             <li class="project-item active">
-              <a href="https://yatguan.voltade.com" target="_blank" rel="noopener noreferrer">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-2.png" alt="Yat Guan" loading="lazy">
-                </figure>
-                <h3 class="project-title">Yat Guan (Digital Brain)</h3>
-                <p class="project-category">Web</p>
+              <a href="https://yatguan.voltade.com" target="_blank" rel="noopener noreferrer" class="project-card-no-img">
+                <div class="project-icon-box">
+                  <ion-icon name="server-outline"></ion-icon>
+                </div>
+                <h3 class="project-title">Yat Guan</h3>
+                <p class="project-category">Enterprise Web App</p>
+                <div class="project-link-text">View Live ↗</div>
               </a>
             </li>
 
@@ -492,10 +485,10 @@
         - #PORTFOLIO
       -->
 
-      <article class="portfolio" data-page="portfolio">
+      <article class="portfolio" data-page="projects">
 
         <header>
-          <h2 class="h2 article-title">Portfolio</h2>
+          <h2 class="h2 article-title">Projects</h2>
         </header>
 
         <section class="projects">
@@ -556,165 +549,102 @@
 
           <ul class="project-list">
 
-            <li class="project-item  active" data-filter-item data-category="ai">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-1.jpg" alt="agentic ai gatekeeper" loading="lazy">
-                </figure>
-
+            <li class="project-item active" data-filter-item data-category="ai">
+              <a href="#" class="project-card-no-img">
+                <div class="project-icon-box">
+                  <ion-icon name="hardware-chip-outline"></ion-icon>
+                </div>
                 <h3 class="project-title">Agentic AI Gatekeeper</h3>
-
-                <p class="project-category">AI</p>
-
+                <p class="project-category">AI Architecture</p>
+                <div class="project-link-text">Internal Project</div>
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="ai">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-2.png" alt="legiflow ai legal documents" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Legiflow (AI for legal documents)</h3>
-
-                <p class="project-category">AI</p>
-
+            <li class="project-item active" data-filter-item data-category="ai">
+              <a href="#" class="project-card-no-img">
+                <div class="project-icon-box">
+                  <ion-icon name="document-text-outline"></ion-icon>
+                </div>
+                <h3 class="project-title">Legiflow</h3>
+                <p class="project-category">AI Legal Document Pipeline</p>
+                <div class="project-link-text">Internal Project</div>
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="ai">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-3.jpg" alt="llm evaluator" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">LLM Evaluator (Turing)</h3>
-
-                <p class="project-category">AI</p>
-
+            <li class="project-item active" data-filter-item data-category="ai">
+              <a href="#" class="project-card-no-img">
+                <div class="project-icon-box">
+                  <ion-icon name="chatbubbles-outline"></ion-icon>
+                </div>
+                <h3 class="project-title">LLM Evaluator</h3>
+                <p class="project-category">Turing</p>
+                <div class="project-link-text">Internal Project</div>
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-4.png" alt="autism emotion synergy" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Autism Emotion Synergy (FYP)</h3>
-
-                <p class="project-category">Machine learning</p>
-
+            <li class="project-item active" data-filter-item data-category="machine learning">
+              <a href="#" class="project-card-no-img">
+                <div class="project-icon-box">
+                  <ion-icon name="pulse-outline"></ion-icon>
+                </div>
+                <h3 class="project-title">Autism Emotion Synergy</h3>
+                <p class="project-category">FYP / Machine Learning</p>
+                <div class="project-link-text">Academic Project</div>
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-5.png" alt="attendance system face recognition" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Face Recognition Attendance System</h3>
-
-                <p class="project-category">Machine learning</p>
-
+            <li class="project-item active" data-filter-item data-category="machine learning">
+              <a href="#" class="project-card-no-img">
+                <div class="project-icon-box">
+                  <ion-icon name="scan-outline"></ion-icon>
+                </div>
+                <h3 class="project-title">Face Recognition System</h3>
+                <p class="project-category">Computer Vision / ML</p>
+                <div class="project-link-text">Academic Project</div>
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="ai">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-6.png" alt="python voice assistant" loading="lazy">
-                </figure>
-
+            <li class="project-item active" data-filter-item data-category="ai">
+              <a href="#" class="project-card-no-img">
+                <div class="project-icon-box">
+                  <ion-icon name="mic-outline"></ion-icon>
+                </div>
                 <h3 class="project-title">Python Voice Assistant</h3>
-
-                <p class="project-category">AI</p>
-
+                <p class="project-category">AI / Speech Recognition</p>
+                <div class="project-link-text">Personal Project</div>
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web">
-              <a href="https://happyfish.voltade.com" target="_blank" rel="noopener noreferrer">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="happy fish" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Happy Fish (Digital Brain)</h3>
-
-                <p class="project-category">Web</p>
-
+            <li class="project-item active" data-filter-item data-category="web">
+              <a href="https://happyfish.voltade.com" target="_blank" rel="noopener noreferrer" class="project-card-no-img">
+                <div class="project-icon-box">
+                  <ion-icon name="globe-outline"></ion-icon>
+                </div>
+                <h3 class="project-title">Happy Fish</h3>
+                <p class="project-category">Digital Brain / Web App</p>
+                <div class="project-link-text">View Live ↗</div>
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web">
-              <a href="https://overmugged.voltade.com" target="_blank" rel="noopener noreferrer">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.jpg" alt="overmugged customer portal" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Overmugged Portal (Digital Brain)</h3>
-
-                <p class="project-category">Web</p>
-
+            <li class="project-item active" data-filter-item data-category="web">
+              <a href="https://overmugged.voltade.com" target="_blank" rel="noopener noreferrer" class="project-card-no-img">
+                <div class="project-icon-box">
+                  <ion-icon name="laptop-outline"></ion-icon>
+                </div>
+                <h3 class="project-title">Overmugged Portal</h3>
+                <p class="project-category">Digital Brain / Client Dashboard</p>
+                <div class="project-link-text">View Live ↗</div>
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web">
-              <a href="https://yatguan.voltade.com" target="_blank" rel="noopener noreferrer">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-2.png" alt="yat guan" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Yat Guan (Digital Brain)</h3>
-
-                <p class="project-category">Web</p>
-
+            <li class="project-item active" data-filter-item data-category="web">
+              <a href="https://yatguan.voltade.com" target="_blank" rel="noopener noreferrer" class="project-card-no-img">
+                <div class="project-icon-box">
+                  <ion-icon name="server-outline"></ion-icon>
+                </div>
+                <h3 class="project-title">Yat Guan</h3>
+                <p class="project-category">Digital Brain / Enterprise Web</p>
+                <div class="project-link-text">View Live ↗</div>
               </a>
             </li>
 
