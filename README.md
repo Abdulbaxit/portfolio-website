@@ -2,7 +2,7 @@
 
 A sleek, modern, and fully responsive personal portfolio website showcasing my skills, experience, and custom-built projects across Full-Stack Web Development, AI Features, and Automatons.
 
-You can view the live portfolio here: **[https://abdulbaxit.github.io/portfolio-website/](https://abdulbaxit.github.io/portfolio-website/)**
+You can view the live portfolio here: **[https://abdulbaxit.github.io/portfolio/](https://abdulbaxit.github.io/portfolio/)**
 
 ## ✨ Features
 - **Modern UI/UX:** Premium dark glassmorphism design with striking neon yellow accents.

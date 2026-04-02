@@ -146,6 +146,7 @@
     -->
 
     <div class="main-content">
+      <div class="scroll-progress" id="scroll-progress"></div>
 
       <!--
         - #NAVBAR
@@ -186,8 +187,11 @@
 
       <article class="about  active" data-page="about">
 
-        <header>
-          <h2 class="h2 article-title">About me</h2>
+        <header class="hero-header">
+          <h2 class="h2 article-title">Associate Software Engineer</h2>
+          <div class="typing-container">
+            <span class="typing-text">I build AI Systems / LLM Pipelines / Full-Stack Apps / Automation Workflows</span>
+          </div>
         </header>
 
         <section class="about-text">
@@ -201,6 +205,37 @@
             communicate directly with clients/product owners and take end-to-end ownership of features—from
             implementation and testing to deployment and maintenance.
           </p>
+        </section>
+
+        <!--
+          - impact metrics
+        -->
+
+        <section class="impact">
+          <h3 class="h3 service-title">Impact & Results</h3>
+
+          <ul class="impact-list">
+            <li class="impact-item">
+              <div class="impact-content">
+                <h4 class="impact-number" data-target="90">0<span>%</span></h4>
+                <p class="impact-text">Reduction in manual legal doc processing (Legiflow AI)</p>
+              </div>
+            </li>
+
+            <li class="impact-item">
+              <div class="impact-content">
+                <h4 class="impact-number" data-target="100">0<span>+</span></h4>
+                <p class="impact-text">Automated employee onboardings via n8n & Node.js</p>
+              </div>
+            </li>
+
+            <li class="impact-item">
+              <div class="impact-content">
+                <h4 class="impact-number" data-target="15">0<span>+</span></h4>
+                <p class="impact-text">Production systems maintained with 99% uptime</p>
+              </div>
+            </li>
+          </ul>
         </section>
 
 
@@ -284,6 +319,35 @@
 
 
         <!--
+          - AI Demo (Chat)
+        -->
+
+        <section class="ai-demo">
+          <h3 class="h3 service-title">Interactive AI Demo</h3>
+          
+          <div class="chat-container">
+            <div class="chat-header">
+              <div class="dot active"></div>
+              <span>Assistant Basit (AI)</span>
+            </div>
+
+            <div class="chat-messages" id="chat-messages">
+              <div class="message system">
+                Hello! I'm a mini-version of Abdul's AI. Ask me about his tech stack or recent work!
+              </div>
+            </div>
+
+            <div class="chat-input-area">
+              <input type="text" id="chat-input" placeholder="Try: 'What is your tech stack?' or 'Tell me about Legiflow'" autocomplete="off">
+              <button id="chat-send">
+                <ion-icon name="send-outline"></ion-icon>
+              </button>
+            </div>
+          </div>
+        </section>
+
+
+        <!--
           - featured projects
         -->
 
@@ -293,46 +357,92 @@
 
           <ul class="project-list" style="margin-bottom: 30px;">
 
-            <li class="project-item active">
-              <a href="https://happyfish.voltade.com" target="_blank" rel="noopener noreferrer" class="project-card-no-img">
+            <li class="project-item active" 
+                data-modal-btn
+                data-title="Happy Fish"
+                data-category="Live Web Application"
+                data-icon="globe-outline"
+                data-problem="Client needed a high-performance web platform to manage their unique digital assets and user interactions."
+                data-solution="Built a scalable Next.js frontend with an optimized PostgreSQL backend, focusing on real-time data synchronization."
+                data-impact="Successfully launched and scaled to support their growing user base with sub-second response times."
+                data-tech="Next.js,React,PostgreSQL,Tailwind"
+                data-link="https://happyfish.voltade.com">
+              <div class="project-card-no-img">
                 <div class="project-icon-box">
                   <ion-icon name="globe-outline"></ion-icon>
                 </div>
                 <h3 class="project-title">Happy Fish</h3>
                 <p class="project-category">Live Web Application</p>
-                <div class="project-link-text">View Live ↗</div>
-              </a>
+                <div class="project-link-text">Read Case Study ↗</div>
+              </div>
             </li>
 
-            <li class="project-item active">
-              <a href="https://overmugged.voltade.com" target="_blank" rel="noopener noreferrer" class="project-card-no-img">
+            <li class="project-item active"
+                data-modal-btn
+                data-title="Overmugged Portal"
+                data-category="Client Dashboard"
+                data-icon="laptop-outline"
+                data-problem="A boutique education firm required a centralized dashboard to manage student enrollments and resource delivery."
+                data-solution="Engineered a secure portal with React and Node.js, featuring automated billing and role-based access control."
+                data-impact="Reduced administrative overhead by 40% through automated scheduling and payment tracking."
+                data-tech="React,Node.js,Express,PostgreSQL"
+                data-link="https://overmugged.voltade.com">
+              <div class="project-card-no-img">
                 <div class="project-icon-box">
                   <ion-icon name="laptop-outline"></ion-icon>
                 </div>
                 <h3 class="project-title">Overmugged Portal</h3>
                 <p class="project-category">Client Dashboard</p>
-                <div class="project-link-text">View Live ↗</div>
-              </a>
+                <div class="project-link-text">Read Case Study ↗</div>
+              </div>
             </li>
 
-            <li class="project-item active">
-              <a href="https://yatguan.voltade.com" target="_blank" rel="noopener noreferrer" class="project-card-no-img">
+            <li class="project-item active"
+                data-modal-btn
+                data-title="Yat Guan"
+                data-category="Enterprise Web App"
+                data-icon="server-outline"
+                data-problem="An enterprise client needed to migrate their legacy inventory systems to a modern, cloud-based architecture."
+                data-solution="Developed a custom ERP solution focusing on inventory tracking and supply chain visibility."
+                data-impact="Modernized operations for a multi-regional team, improving data accuracy across departments."
+                data-tech="Next.js,Hono,Drizzle ORM,AWS"
+                data-link="https://yatguan.voltade.com">
+              <div class="project-card-no-img">
                 <div class="project-icon-box">
                   <ion-icon name="server-outline"></ion-icon>
                 </div>
                 <h3 class="project-title">Yat Guan</h3>
                 <p class="project-category">Enterprise Web App</p>
-                <div class="project-link-text">View Live ↗</div>
-              </a>
+                <div class="project-link-text">Read Case Study ↗</div>
+              </div>
             </li>
 
           </ul>
 
         </section>
 
+        <!--
+          - hire me cta
+        -->
+        <section class="cta" style="margin-top: 30px;">
+          <div class="cta-card" style="background: var(--bg-gradient-jet); padding: 30px; border-radius: 20px; border: 1px solid var(--jet); text-align: center; box-shadow: var(--shadow-3);">
+            <h3 class="h3 cta-title" style="margin-bottom: 10px;">Ready to build something amazing?</h3>
+            <p class="cta-text" style="color: var(--light-gray-70); margin-bottom: 25px;">I'm currently open to new opportunities and interesting AI/Full-stack projects.</p>
+            
+            <div class="cta-actions" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+              <a href="mailto:abasita33@gmail.com" class="cta-btn primary" style="background: var(--bg-gradient-yellow-1); color: var(--orange-yellow-crayola); padding: 12px 25px; border-radius: 12px; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: var(--transition-1);">
+                <ion-icon name="mail-outline"></ion-icon>
+                <span>Hire Me</span>
+              </a>
+              <button class="cta-btn secondary" id="copy-email" style="background: var(--onyx); color: var(--white-2); border: 1px solid var(--jet); padding: 12px 25px; border-radius: 12px; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: var(--transition-1);">
+                <ion-icon name="copy-outline"></ion-icon>
+                <span id="copy-text">Copy Email</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
       </article>
-
-
 
 
 
@@ -573,103 +683,184 @@
 
           <ul class="project-list">
 
-            <li class="project-item active" data-filter-item data-category="ai">
-              <a href="#" class="project-card-no-img">
+            <li class="project-item active" data-filter-item data-category="ai"
+                data-modal-btn
+                data-title="Agentic AI Gatekeeper"
+                data-category="AI Architecture"
+                data-icon="hardware-chip-outline"
+                data-problem="LLM applications often face security and cost issues from unformatted or malicious prompts."
+                data-solution="Designed a 'Gatekeeper' agent that intercepts and validates all incoming prompts before they hit the core model."
+                data-impact="Reduced hallucination rates and improved system security by 60% through structured validation."
+                data-tech="Gemini,LangChain,FastAPI,Redis"
+                data-link="#">
+              <div class="project-card-no-img">
                 <div class="project-icon-box">
                   <ion-icon name="hardware-chip-outline"></ion-icon>
                 </div>
                 <h3 class="project-title">Agentic AI Gatekeeper</h3>
                 <p class="project-category">AI Architecture</p>
-                <div class="project-link-text">Internal Project</div>
-              </a>
+                <div class="project-link-text">Read Case Study ↗</div>
+              </div>
             </li>
 
-            <li class="project-item active" data-filter-item data-category="ai">
-              <a href="#" class="project-card-no-img">
+            <li class="project-item active" data-filter-item data-category="ai"
+                data-modal-btn
+                data-title="Legiflow"
+                data-category="AI Legal Document Pipeline"
+                data-icon="document-text-outline"
+                data-problem="Legal teams manually processed thousands of pages, leading to slow turnaround times and human error."
+                data-solution="Engineered an end-to-end RAG pipeline using Google Gemini and Vector databases for high-speed legal retrieval."
+                data-impact="90% reduction in manual document processing time while maintaining 98%+ extraction accuracy."
+                data-tech="Gemini,FastAPI,Pinecone,Next.js"
+                data-link="#">
+              <div class="project-card-no-img">
                 <div class="project-icon-box">
                   <ion-icon name="document-text-outline"></ion-icon>
                 </div>
                 <h3 class="project-title">Legiflow</h3>
                 <p class="project-category">AI Legal Document Pipeline</p>
-                <div class="project-link-text">Internal Project</div>
-              </a>
+                <div class="project-link-text">Read Case Study ↗</div>
+              </div>
             </li>
 
-            <li class="project-item active" data-filter-item data-category="ai">
-              <a href="#" class="project-card-no-img">
+            <li class="project-item active" data-filter-item data-category="ai"
+                data-modal-btn
+                data-title="LLM Evaluator"
+                data-category="Turing / AI Quality Assurance"
+                data-icon="chatbubbles-outline"
+                data-problem="Scaling AI models required a rigorous way to evaluate model outputs against human-grade ground truth."
+                data-solution="Built automated evaluation pipelines that validate DB states and logical consistency of model responses."
+                data-impact="Enabled the team to deploy model updates with 100% confidence in regression testing."
+                data-tech="FastAPI,PostgreSQL,Pytest,Docker"
+                data-link="#">
+              <div class="project-card-no-img">
                 <div class="project-icon-box">
                   <ion-icon name="chatbubbles-outline"></ion-icon>
                 </div>
                 <h3 class="project-title">LLM Evaluator</h3>
                 <p class="project-category">Turing</p>
-                <div class="project-link-text">Internal Project</div>
-              </a>
+                <div class="project-link-text">Read Case Study ↗</div>
+              </div>
             </li>
 
-            <li class="project-item active" data-filter-item data-category="machine learning">
-              <a href="#" class="project-card-no-img">
+            <li class="project-item active" data-filter-item data-category="machine learning"
+                data-modal-btn
+                data-title="Autism Emotion Synergy"
+                data-category="FYP / Machine Learning"
+                data-icon="pulse-outline"
+                data-problem="Children with autism often face challenges in recognizing and expressing emotions in social contexts."
+                data-solution="Developed a deep learning model to recognize facial expressions and provide real-time feedback."
+                data-impact="Successfully demonstrated a high-accuracy emotion recognition system for my Final Year Project (FYP)."
+                data-tech="Python,TensorFlow,OpenCV,Keras"
+                data-link="#">
+              <div class="project-card-no-img">
                 <div class="project-icon-box">
                   <ion-icon name="pulse-outline"></ion-icon>
                 </div>
                 <h3 class="project-title">Autism Emotion Synergy</h3>
                 <p class="project-category">FYP / Machine Learning</p>
-                <div class="project-link-text">Academic Project</div>
-              </a>
+                <div class="project-link-text">Read Case Study ↗</div>
+              </div>
             </li>
 
-            <li class="project-item active" data-filter-item data-category="machine learning">
-              <a href="#" class="project-card-no-img">
+            <li class="project-item active" data-filter-item data-category="machine learning"
+                data-modal-btn
+                data-title="Face Recognition System"
+                data-category="Computer Vision / ML"
+                data-icon="scan-outline"
+                data-problem="Manual attendance and security checks are slow and prone to errors in large organizations."
+                data-solution="Implemented a real-time face recognition system using MTCNN for detection and FaceNet for embeddings."
+                data-impact="Achieved 95%+ accuracy in identifying known individuals in various lighting conditions."
+                data-tech="Python,OpenCV,NumPy,FaceNet"
+                data-link="#">
+              <div class="project-card-no-img">
                 <div class="project-icon-box">
                   <ion-icon name="scan-outline"></ion-icon>
                 </div>
                 <h3 class="project-title">Face Recognition System</h3>
                 <p class="project-category">Computer Vision / ML</p>
-                <div class="project-link-text">Academic Project</div>
-              </a>
+                <div class="project-link-text">Read Case Study ↗</div>
+              </div>
             </li>
 
-            <li class="project-item active" data-filter-item data-category="ai">
-              <a href="#" class="project-card-no-img">
+            <li class="project-item active" data-filter-item data-category="ai"
+                data-modal-btn
+                data-title="Python Voice Assistant"
+                data-category="AI / Speech Recognition"
+                data-icon="mic-outline"
+                data-problem="Navigating operating systems and performing quick tasks can be inefficient through GUI alone."
+                data-solution="Created a modular voice assistant capable of opening apps, fetching news, and performing system commands via voice."
+                data-impact="Streamlined personal workflow by enabling hands-free task execution for common daily routines."
+                data-tech="Python,Pyttsx3,SpeechRecognition,API"
+                data-link="#">
+              <div class="project-card-no-img">
                 <div class="project-icon-box">
                   <ion-icon name="mic-outline"></ion-icon>
                 </div>
                 <h3 class="project-title">Python Voice Assistant</h3>
                 <p class="project-category">AI / Speech Recognition</p>
-                <div class="project-link-text">Personal Project</div>
-              </a>
+                <div class="project-link-text">Read Case Study ↗</div>
+              </div>
             </li>
 
-            <li class="project-item active" data-filter-item data-category="web">
-              <a href="https://happyfish.voltade.com" target="_blank" rel="noopener noreferrer" class="project-card-no-img">
+            <li class="project-item active" data-filter-item data-category="web"
+                data-modal-btn
+                data-title="Happy Fish"
+                data-category="Digital Brain / Web App"
+                data-icon="globe-outline"
+                data-problem="Managing digital fish assets required a responsive and real-time dashboard for end-users."
+                data-solution="Developed a high-performance web interface with React and FastAPI, integrated with global state management."
+                data-impact="Successfully shipped a production-ready application for client 'Digital Brain'."
+                data-tech="React,FastAPI,PostgreSQL,Tailwind"
+                data-link="https://happyfish.voltade.com">
+              <div class="project-card-no-img">
                 <div class="project-icon-box">
                   <ion-icon name="globe-outline"></ion-icon>
                 </div>
                 <h3 class="project-title">Happy Fish</h3>
                 <p class="project-category">Digital Brain / Web App</p>
-                <div class="project-link-text">View Live ↗</div>
-              </a>
+                <div class="project-link-text">Read Case Study ↗</div>
+              </div>
             </li>
 
-            <li class="project-item active" data-filter-item data-category="web">
-              <a href="https://overmugged.voltade.com" target="_blank" rel="noopener noreferrer" class="project-card-no-img">
+            <li class="project-item active" data-filter-item data-category="web"
+                data-modal-btn
+                data-title="Overmugged Portal"
+                data-category="Digital Brain / Client Dashboard"
+                data-icon="laptop-outline"
+                data-problem="Educational service manual management led to administrative bottlenecks and scheduling conflicts."
+                data-solution="Built an automated student portal to handle bookings, resource sharing, and internal comms."
+                data-impact="Reduced manual scheduling errors by 50% and improved student engagement tracking."
+                data-tech="React,Node.js,PostgreSQL,Tailwind"
+                data-link="https://overmugged.voltade.com">
+              <div class="project-card-no-img">
                 <div class="project-icon-box">
                   <ion-icon name="laptop-outline"></ion-icon>
                 </div>
                 <h3 class="project-title">Overmugged Portal</h3>
                 <p class="project-category">Digital Brain / Client Dashboard</p>
-                <div class="project-link-text">View Live ↗</div>
-              </a>
+                <div class="project-link-text">Read Case Study ↗</div>
+              </div>
             </li>
 
-            <li class="project-item active" data-filter-item data-category="web">
-              <a href="https://yatguan.voltade.com" target="_blank" rel="noopener noreferrer" class="project-card-no-img">
+            <li class="project-item active" data-filter-item data-category="web"
+                data-modal-btn
+                data-title="Yat Guan"
+                data-category="Digital Brain / Enterprise Web"
+                data-icon="server-outline"
+                data-problem="Legacy ERP software was non-responsive and difficult to use across different company branches."
+                data-solution="Modernized the enterprise portal with a mobile-first approach and a server-side state optimization."
+                data-impact="Improved operational efficiency for warehouse management and order fulfillment."
+                data-tech="Next.js,Hono,Drizzle,AWS"
+                data-link="https://yatguan.voltade.com">
+              <div class="project-card-no-img">
                 <div class="project-icon-box">
                   <ion-icon name="server-outline"></ion-icon>
                 </div>
                 <h3 class="project-title">Yat Guan</h3>
                 <p class="project-category">Digital Brain / Enterprise Web</p>
-                <div class="project-link-text">View Live ↗</div>
-              </a>
+                <div class="project-link-text">Read Case Study ↗</div>
+              </div>
             </li>
 
           </ul>
@@ -677,199 +868,6 @@
         </section>
 
       </article>
-
-
-
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
 
 
 
@@ -916,6 +914,61 @@
         </section>
 
       </article>
+
+    <!--
+      - project case study modal
+    -->
+
+    <div class="modal-container" data-modal-container>
+
+      <div class="overlay" data-overlay></div>
+
+      <section class="case-study-modal">
+
+        <button class="modal-close-btn" data-modal-close-btn>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-icon-box">
+              <ion-icon name="hardware-chip-outline" id="modal-icon"></ion-icon>
+            </div>
+            <div>
+              <h3 class="h3 modal-title" id="modal-title">Project Title</h3>
+              <p class="modal-category" id="modal-category">Project Category</p>
+            </div>
+          </div>
+
+          <div class="modal-body">
+            <div class="case-study-section">
+              <h4 class="h4">Problem</h4>
+              <p class="modal-text" id="modal-problem">Description of the problem...</p>
+            </div>
+
+            <div class="case-study-section">
+              <h4 class="h4">Solution</h4>
+              <p class="modal-text" id="modal-solution">Description of the solution...</p>
+            </div>
+
+            <div class="case-study-section">
+              <h4 class="h4">Impact</h4>
+              <p class="modal-text impact-highlight" id="modal-impact">Description of the impact...</p>
+            </div>
+
+            <div class="modal-footer">
+              <div class="tech-tags" id="modal-tech">
+                <!-- tags will be injected here -->
+              </div>
+              <a href="#" target="_blank" class="modal-link" id="modal-link">
+                <span>View Live / Repo</span>
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </section>
 
     </div>
 
