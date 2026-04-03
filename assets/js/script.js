@@ -156,20 +156,33 @@ function typeEffect() {
 }
 
 /**
- * AI Chat Demo Logic
+ * AI Chat Demo Logic - Secure Gemini Proxy Integration
  */
 const chatInput = document.getElementById("chat-input");
 const chatSend = document.getElementById("chat-send");
 const chatMessages = document.getElementById("chat-messages");
 
+// --- CONFIGURATION ---
+// Paste your Google Apps Script URL here after following AI_SETUP.md
+const PROXY_URL = "https://script.google.com/macros/s/AKfycbzt-leFjTRpXK6UVOeOOxdn-vn4h8BED6Je-F9644R4VEzTeBDVvtho_jnjGIoGb_4FCw/exec"; 
+
+const SYSTEM_PROMPT = `You are "Assistant Basit", a professional AI representing Abdul Basit. 
+Abdul is an Associate Software Engineer at Devsarch.
+Skills: Next.js, React, FastAPI, Node.js, PostgreSQL, AI Systems (LLMs/RAG), n8n Automation.
+Key Projects: 
+1. Legiflow: AI legal document pipeline using Gemini (90% time reduction).
+2. Agentic AI Gatekeeper: Prompt validation and security layer.
+3. LLM Evaluator: Automated model output QA.
+Keep responses concise, professional, and helpful. If you don't know something, suggest contacting Abdul directly at abasita33@gmail.com.`;
+
 const responses = {
   "tech stack": "Abdul's core stack includes Next.js, React, FastAPI, Node.js, and PostgreSQL. He also uses Python for most AI/ML tasks.",
   "skills": "He specializes in AI Systems (LLMs, RAG), Full-Stack development, and Automation workflows (n8n).",
-  "legiflow": "Legiflow is an AI legal document pipeline Abdul built at Devsarch using Gemini and Vector DBs. It reduced processing time by 90%!",
   "contact": "You can reach Abdul at abasita33@gmail.com or through the Contact tab.",
-  "hire": "Abdul is open to Associate or Mid-level roles in AI/Full-stack Engineering. Check out his Resume tab for details!",
-  "education": "He holds a BSc in Software Engineering from Lahore Garrison University (CGPA 3.06)."
+  "hire": "Abdul is open to Associate or Mid-level roles in AI/Full-stack Engineering. Check out his Resume tab for details!"
 };
+
+let chatHistory = []; // Stores last 5 messages for context
 
 function addMessage(text, sender) {
   const msg = document.createElement("div");
@@ -177,28 +190,66 @@ function addMessage(text, sender) {
   msg.textContent = text;
   chatMessages.appendChild(msg);
   chatMessages.scrollTop = chatMessages.scrollHeight;
+  
+  if (sender !== "system-loading") {
+    chatHistory.push({ role: sender === "user" ? "user" : "model", text: text });
+    if (chatHistory.length > 10) chatHistory.shift(); 
+  }
+  return msg;
 }
 
-function handleChat() {
-  const userText = chatInput.value.trim().toLowerCase();
+async function callGeminiProxy(prompt) {
+  if (!PROXY_URL) return null; // Fallback to mock if no proxy URL
+
+  try {
+    const response = await fetch(PROXY_URL, {
+      method: "POST",
+      body: JSON.stringify({
+        prompt: prompt,
+        history: [{ role: "user", text: SYSTEM_PROMPT }, ...chatHistory]
+      })
+    });
+    const data = await response.json();
+    return data.text || data.error;
+  } catch (err) {
+    console.error("Proxy Error:", err);
+    return null;
+  }
+}
+
+async function handleChat() {
+  const userText = chatInput.value.trim();
   if (!userText) return;
 
-  addMessage(chatInput.value, "user");
+  addMessage(userText, "user");
   chatInput.value = "";
 
-  // Fake "typing" delay
-  setTimeout(() => {
-    let response = "That's a great question! Abdul is passionate about that. You should check his Projects or Resume for more specifics.";
-    
-    for (const key in responses) {
-      if (userText.includes(key)) {
-        response = responses[key];
-        break;
+  // Show Loading state
+  const loadingMsg = addMessage("Thinking...", "system");
+  loadingMsg.style.opacity = "0.5";
+
+  // 1. Try Real AI via Proxy
+  const aiResponse = await callGeminiProxy(userText);
+
+  if (aiResponse) {
+    loadingMsg.textContent = aiResponse;
+    loadingMsg.style.opacity = "1";
+  } else {
+    // 2. Fallback to Keyword Mock
+    setTimeout(() => {
+      let response = "That's a great question! Abdul is passionate about that. You should check his Projects or Resume for more specifics.";
+      const lowerText = userText.toLowerCase();
+      
+      for (const key in responses) {
+        if (lowerText.includes(key)) {
+          response = responses[key];
+          break;
+        }
       }
-    }
-    
-    addMessage(response, "system");
-  }, 600);
+      loadingMsg.textContent = response;
+      loadingMsg.style.opacity = "1";
+    }, 600);
+  }
 }
 
 if (chatSend) {
