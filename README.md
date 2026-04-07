@@ -1,6 +1,6 @@
 # Abdul Basit - Personal Portfolio
 
-A sleek modern, and fully responsive personal portfolio website showcasing my skills, experience, and custom-built projects across Full-Stack Web Development, AI Features, and Automatons.
+A sleek modern, and fully responsive personal portfolio website showcasing my skills, experience, and custom-built projects across Full-Stack Web Development, AI features, and Automatons.
 
 You can view the live portfolio here: **[https://abdulbaxit.github.io/portfolio/](https://abdulbaxit.github.io/portfolio/)**
 
